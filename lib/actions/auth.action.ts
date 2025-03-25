@@ -43,13 +43,14 @@ export async function signUp(params: SignUpParams) {
       email,
       // profileURL,
       // resumeURL,
+      cratedAt: new Date().toISOString(),
     });
 
     return {
       success: true,
       message: "Account created successfully. Please sign in.",
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error creating user:", error);
 
     // Handle Firebase specific errors
